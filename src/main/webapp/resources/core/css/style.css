@@ -1,0 +1,419 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/****************** default style *******************/
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//static-org.vcdn.vn/123fstatic/static/fonts/robotocondensed/RobotoCondensed-Light.woff') format('woff'), url('//static-org.vcdn.vn/123fstatic/static/fonts/robotocondensed/RobotoCondensed-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//static-org.vcdn.vn/123fstatic/static/fonts/robotocondensed/RobotoCondensed-Regular.woff') format('woff'), url('//static-org.vcdn.vn/123fstatic/static/fonts/robotocondensed/RobotoCondensed-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//static-org.vcdn.vn/123fstatic/static/fonts/robotocondensed/RobotoCondensed-Bold.woff') format('woff'), url('//static-org.vcdn.vn/123fstatic/static/fonts/robotocondensed/RobotoCondensed-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//static-org.vcdn.vn/123fstatic/static/fonts/robotoslab/RobotoSlab-Light.woff') format('woff'), url('//static-org.vcdn.vn/123fstatic/static/fonts/robotoslab/RobotoSlab-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//static-org.vcdn.vn/123fstatic/static/fonts/robotoslab/RobotoSlab-Regular.woff') format('woff'), url('//static-org.vcdn.vn/123fstatic/static/fonts/robotoslab/RobotoSlab-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//static-org.vcdn.vn/123fstatic/static/fonts/robotoslab/RobotoSlab-Bold.woff') format('woff'), url('//static-org.vcdn.vn/123fstatic/static/fonts/robotoslab/RobotoSlab-Bold.ttf') format('truetype');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+body {
+    font-family: "Roboto Condensed", Helvetica, Arial;
+    color: #000;
+    position: relative;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+:focus {
+    outline: 0;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a { text-decoration:none; display: block;}
+*:focus { outline: none;}
+*::-moz-focus-inner { border: none;}
+
+button::-moz-focus-inner { border:medium none;}
+
+button::-moz-focus-inner { margin:0; padding:0;}
+
+input, select {
+    _zoom:1;
+    font-size:11px;
+    margin-bottom:4px;
+}
+:focus {
+    outline: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-size:16px;
+}
+p,span,div{
+    cursor:default;
+}
+a *{
+    cursor:pointer;
+}
+a:hover{
+    text-decoration: none !important;
+}
+.clearfix {
+    clear: both;
+    zoom: 1;
+}
+.inside {
+    margin: 0 auto;
+    position: relative;
+    width: 1110px;
+}
+.clearfix:before,.clearfix:after {
+    content: "";
+    display: block !important;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    visibility: hidden;
+}
+.clearfix:after {
+    clear: both;
+}
+.content{
+    width: 760px;
+    float: left;
+}
+aside{
+}
+.error{
+    color: red;
+}
+.hide{
+    display: none;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media all and (min-device-width : 320px){
+    .content{
+        min-height: 1400px;
+    }
+    .bookdetails{
+        min-height: 700px;
+    }
+    /*    .adInside{
+            width: 100%;
+        }*/
+}
+
+/*iPhone 6+ -----------*/ 
+@media all and (min-device-width: 414px){
+    .content{
+        min-height: 1000px;
+    }
+    .bookdetails{
+        min-height: 700px;
+    }
+    /*    .adInside{
+            width: 100%;
+        }*/
+}
+/*@media all and (min-device-width : 768px){
+    .adInside{
+        width: 100%;
+    }
+}
+@media all and (min-device-width : 800px){
+    .adInside{
+        width: 100%;
+    }
+}
+@media all and (min-device-width : 1024px){
+    .adInside{
+        width: 100%;
+    }
+}*/
+/*iPads (portrait and landscape) -----------*/ 
+@media all and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .content{
+        min-height: 1000px;
+    }
+    .bookdetails{
+        min-height: 700px;
+    }
+}
+/*iPads (portrait and landscape) -----------*/ 
+@media all and (min-device-width : 800px) and (max-device-width : 1024px) {
+    .content{
+        min-height: 1200px;
+    }
+    .bookdetails{
+        min-height: 700px;
+    }
+}
+
+/*Desktops and laptops -----------*/ 
+@media all and (min-width : 1224px) {
+    .content{
+        min-height: 1200px;
+    }
+    .bookdetails{
+        min-height: 700px;
+    }
+    /*    .adInside{
+            width: 100%;
+        }*/
+}
+
+/*Large screens -----------*/ 
+@media all and (min-width : 1824px) {
+    .content{
+        min-height: 1200px;
+    }
+    .bookdetails{
+        min-height: 700px;
+    }
+    /*    .adInside{
+            width: 100%;
+        }*/
+}
+/****************** back to top style *******************/
+#back-to-top {
+    position: fixed;
+    bottom: 44px;
+    right: 40px;
+    z-index: 550;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #FFF;
+    cursor: pointer;
+    border: 0;
+    transition: opacity 0.2s ease-out;
+    opacity: 0.8;
+    background: #EE8942;
+    display: none;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+#back-to-top:hover {
+    opacity: 1;
+}
+#back-to-top.show {
+    display: block;
+}
+/****************** top header style *******************/
+header > .clearfix:first-child{
+    height: 25px;
+    background-color: #EEEEEE;
+}
+header > .clearfix:first-child .inside{
+    line-height: 25px;
+}
+header > .clearfix:first-child .inside a,
+header > .clearfix:first-child .inside span{
+    float: right;
+}
+header > .clearfix:first-child .inside a{
+    margin-top: -2px;
+    margin-left: 7px;
+}
+header > .clearfix:first-child .inside a img{
+    width: 30px;
+    height: 23px;
+}
+/****************** banner, user option style *******************/
+header > .inside .logo{
+    float: left;
+    height: 130px;
+    line-height: 130px;
+    padding: 0 10px;
+}
+header > .inside .logo a{
+    margin-top: -2px;
+}
+header > .inside .logo a img{
+    height: 130px;
+    width: 170px;
+}
+header > .inside .user-option{
+    float: right;
+    height: 130px;
+    position: relative;
+}
+header > .inside .user-option span{
+    position: absolute;
+    top: 50%;
+    height: 40px;
+    right: 0;
+    margin-top: -20px;
+    width: 40px;
+    line-height: 40px;
+    background: url('../..//image/icon/user.png') center right no-repeat;
+    background-size: 77%;
+}
+header > .inside .user-option .option{
+    position: absolute;
+    right: 55px;
+    height: 45px;
+    top: 50%;
+    margin-top: -22.5px;
+}
+header > .inside .user-option .option a{
+    float: right;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin: 2.5px 0;
+}
+/****************** navigation, search, cart style *******************/
+header > .clearfix:last-child{
+    background: #087B39;
+}
+header > .clearfix:last-child nav{
+    float: left;
+    height: 45px;
+    width: 180px;
+}
+header > .clearfix:last-child nav h1{
+    color: #FFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+header > .clearfix:last-child nav h1 a{
+    transform: rotate(180deg);
+    position: absolute;
+    top: 3px;
+    right: 37px;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+header > .clearfix:last-child .searchFrm{
+    float: left;
+    width: 780px;
+    margin: 0 5px;
+    text-align: center;
+}
+header > .clearfix:last-child .searchFrm form{
+    width: 600px;
+    line-height: 45px;
+    height: 45px;
+    position: relative;
+    margin: auto;
+}
+header > .clearfix:last-child .searchFrm form input[type="text"]{
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    padding: 5px 10px;
+    margin: 2.5px 0;
+    font-size: 14px;
+    min-width: 420px;
+    border-radius: 0 5px 5px 0;
+}
+header > .clearfix:last-child .searchFrm form input[type="submit"]{
+    position: absolute;
+    width: 37px;
+    right: 0;
+    border: none;
+    background: url(../..//image/icon/search.png) center center no-repeat;
+}
+header > .clearfix:last-child .searchFrm form select{
+    font-size: 14px;
+    height: 30px;
+    padding: 0 5px;
+    min-width: 170px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+header > .clearfix:last-child .cart{
+    float: right;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
