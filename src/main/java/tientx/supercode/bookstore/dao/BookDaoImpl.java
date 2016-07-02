@@ -46,6 +46,7 @@ public class BookDaoImpl implements BookDao {
                 + "tblBook.vote, "
                 + "tblBook.rate, "
                 + "tblBook.link, "
+                + "tblBook.status, "
                 + "tblSubCategory.idSubCt, "
                 + "tblSubCategory.name , "
                 + "tblSubCategory.description, "
@@ -59,8 +60,8 @@ public class BookDaoImpl implements BookDao {
             rs = state.executeQuery(sqlSelect);
             if (rs != null && rs.next()) {
                 SubCategory subCategory = new SubCategory(
-                        rs.getInt(13), rs.getString(14),
-                        rs.getString(15), rs.getString(16)
+                        rs.getInt(14), rs.getString(15),
+                        rs.getString(16), rs.getString(17)
                 );
                 List<Deals> listDeals = getDealsById(id);
                 return new Book(
@@ -68,7 +69,7 @@ public class BookDaoImpl implements BookDao {
                         rs.getString(3), rs.getString(4), rs.getString(5),
                         rs.getString(6), rs.getString(7), rs.getString(8),
                         rs.getInt(9), rs.getInt(10), rs.getInt(11),
-                        rs.getString(12), subCategory, listDeals
+                        rs.getString(12), rs.getInt(13), subCategory, listDeals
                 );
             }
         } catch (Exception e) {
@@ -87,12 +88,12 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<Book> getByIdSubCategory(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
     public List<Book> getBySubCategoryName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
@@ -152,8 +153,9 @@ public class BookDaoImpl implements BookDao {
                 + "quantity, "
                 + "vote, "
                 + "rate, "
-                + "link"
-                + ") VALUES(?,?,?,?,?,?,?,?,?,?,?,?);";
+                + "link, "
+                + "status"
+                + ") VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);";
         try {
             ps = conn.prepareStatement(sqlInsert);
             ps.setString(1, book.getsTitle());
@@ -167,8 +169,9 @@ public class BookDaoImpl implements BookDao {
             ps.setInt(9, book.getiQuantity());
             ps.setInt(10, 0);
             ps.setInt(11, 0);
-            ps.setInt(11, 0);
-            ps.setString(12, book.getsTitle());
+            ps.setString(12, MyTool.handleLink(book.getsTitle()));
+            ps.setInt(13, 0);
+//            ps.setString(12, book.getsTitle());
 
             int numm = ps.executeUpdate();
             if (numm == 1) {
@@ -176,18 +179,18 @@ public class BookDaoImpl implements BookDao {
                 rs = state.executeQuery("SELECT LAST_INSERT_ID();");
                 if (rs != null && rs.next()) {
                     Integer idBook = rs.getInt(1);
-                    String sqlUpdate = "UPDATE tblBook "
-                            + "SET tblBook.link = ? "
-                            + "WHERE tblBook.idBook = ?;";
-                    ps = conn.prepareStatement(sqlUpdate);
-                    ps.setString(1, MyTool.handleLink(book.getsTitle()));
+//                    String sqlUpdate = "UPDATE tblBook "
+//                            + "SET tblBook.link = ? "
+//                            + "WHERE tblBook.idBook = ?;";
+//                    ps = conn.prepareStatement(sqlUpdate);
+//                    ps.setString(1, MyTool.handleLink(book.getsTitle()));
 //                    ps.setString(1, MyTool.handleLink(book.getsTitle(), idBook));
-                    ps.setInt(2, idBook);
+//                    ps.setInt(2, idBook);
 
-                    numm = ps.executeUpdate();
-                    if (numm == 1) {
+//                    numm = ps.executeUpdate();
+//                    if (numm == 1) {
                         return idBook;
-                    }
+//                    }
                 }
             }
         } catch (Exception e) {
@@ -221,7 +224,8 @@ public class BookDaoImpl implements BookDao {
                 + "tblBook.quantity = ?, "
                 + "tblBook.vote = ?, "
                 + "tblBook.rate = ?, "
-                + "tblBook.link = ? "
+                + "tblBook.link = ?, "
+                + "tblBook.status = ? "
                 + "WHERE tblBook.idBook = ?;";
         try {
             ps = conn.prepareStatement(sqlUpdate);
@@ -234,10 +238,10 @@ public class BookDaoImpl implements BookDao {
             ps.setString(7, book.getsOriginalPrice());
             ps.setString(8, book.getsSalePrice());
             ps.setInt(9, book.getiQuantity());
-            ps.setInt(10, 0);
-            ps.setInt(11, 0);
-            ps.setInt(11, 0);
+            ps.setInt(10, book.getiVote());
+            ps.setInt(11, book.getiRate());
             ps.setString(12, MyTool.handleLink(book.getsTitle()));
+            ps.setInt(13, book.getStatus());
 //            ps.setString(12, MyTool.handleLink(book.getsTitle(), book.getIdBook()));
 
             int numm = ps.executeUpdate();

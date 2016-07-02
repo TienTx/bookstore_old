@@ -27,27 +27,74 @@ public class Book implements Serializable {
     private Integer iVote;
     private Integer iRate;
     private String sLink;
+    private Integer status;
     private SubCategory category;
     private List<Deals> listDeals;
 
     public Book() {
     }
 
-    public Book(Integer idBook, String sTitle, String sAuthor, String sPublisher, String sPublishYear, String sCoverImg, String sDescription, String sOriginalPrice, String sSalePrice, Integer iQuantity, Integer iVote, Integer iRate, String sLink, SubCategory category, List<Deals> listDeals) {
+    public void setIdBook(Integer idBook) {
         this.idBook = idBook;
+    }
+
+    public void setsTitle(String sTitle) {
         this.sTitle = sTitle;
+    }
+
+    public void setsAuthor(String sAuthor) {
         this.sAuthor = sAuthor;
+    }
+
+    public void setsPublisher(String sPublisher) {
         this.sPublisher = sPublisher;
+    }
+
+    public void setsPublishYear(String sPublishYear) {
         this.sPublishYear = sPublishYear;
+    }
+
+    public void setsCoverImg(String sCoverImg) {
         this.sCoverImg = sCoverImg;
+    }
+
+    public void setsDescription(String sDescription) {
         this.sDescription = sDescription;
+    }
+
+    public void setsOriginalPrice(String sOriginalPrice) {
         this.sOriginalPrice = sOriginalPrice;
+    }
+
+    public void setsSalePrice(String sSalePrice) {
         this.sSalePrice = sSalePrice;
+    }
+
+    public void setiQuantity(Integer iQuantity) {
         this.iQuantity = iQuantity;
+    }
+
+    public void setiVote(Integer iVote) {
         this.iVote = iVote;
+    }
+
+    public void setiRate(Integer iRate) {
         this.iRate = iRate;
+    }
+
+    public void setsLink(String sLink) {
         this.sLink = sLink;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public void setCategory(SubCategory category) {
         this.category = category;
+    }
+
+    public void setListDeals(List<Deals> listDeals) {
         this.listDeals = listDeals;
     }
 
@@ -103,6 +150,10 @@ public class Book implements Serializable {
         return sLink;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
     public SubCategory getCategory() {
         return category;
     }
@@ -111,64 +162,22 @@ public class Book implements Serializable {
         return listDeals;
     }
 
-    public void setIdBook(Integer idBook) {
+    public Book(Integer idBook, String sTitle, String sAuthor, String sPublisher, String sPublishYear, String sCoverImg, String sDescription, String sOriginalPrice, String sSalePrice, Integer iQuantity, Integer iVote, Integer iRate, String sLink, Integer status, SubCategory category, List<Deals> listDeals) {
         this.idBook = idBook;
-    }
-
-    public void setsTitle(String sTitle) {
         this.sTitle = sTitle;
-    }
-
-    public void setsAuthor(String sAuthor) {
         this.sAuthor = sAuthor;
-    }
-
-    public void setsPublisher(String sPublisher) {
         this.sPublisher = sPublisher;
-    }
-
-    public void setsPublishYear(String sPublishYear) {
         this.sPublishYear = sPublishYear;
-    }
-
-    public void setsCoverImg(String sCoverImg) {
         this.sCoverImg = sCoverImg;
-    }
-
-    public void setsDescription(String sDescription) {
         this.sDescription = sDescription;
-    }
-
-    public void setsOriginalPrice(String sOriginalPrice) {
         this.sOriginalPrice = sOriginalPrice;
-    }
-
-    public void setsSalePrice(String sSalePrice) {
         this.sSalePrice = sSalePrice;
-    }
-
-    public void setiQuantity(Integer iQuantity) {
         this.iQuantity = iQuantity;
-    }
-
-    public void setiVote(Integer iVote) {
         this.iVote = iVote;
-    }
-
-    public void setiRate(Integer iRate) {
         this.iRate = iRate;
-    }
-
-    public void setsLink(String sLink) {
         this.sLink = sLink;
-    }
-
-    public void setCategory(SubCategory category) {
+        this.status = status;
         this.category = category;
-    }
-
-    public void setListDeals(List<Deals> listDeals) {
         this.listDeals = listDeals;
     }
-
 }

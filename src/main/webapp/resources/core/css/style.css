@@ -359,11 +359,21 @@ header > .clearfix:last-child nav h1{
 header > .clearfix:last-child nav h1 a{
     transform: rotate(180deg);
     position: absolute;
-    top: 2px;
+    top: 15px;
     right: 37px;
-    color: #FFF;
-    font-size: 14px;
+    color: #087B39;
+    font-size: 13px;
     cursor: pointer;
+    background: #FFF;
+    width: 16px;
+    height: 16px;
+    line-height: 13px;
+    display: block;
+    -moz-border-radius: 40%;
+    -webkit-border-radius: 40%;
+    border-radius: 40%;
+    box-shadow: #087B39 -1px -1px 1px inset;
+    
 }
 header > .clearfix:last-child nav .category{
 /*     background: red; */
@@ -510,55 +520,47 @@ header > .clearfix:last-child .cart{
     width: 100%;
     clear: both;
     min-height: 500px;
+    padding-top: 15px;
+    position: relative;
 }
-.container .tab-container .e-tab{
-    width: 25%;
+.container .tab-container .tab-title{
+    width: 100%;
+    clear: both;
+}
+.container .tab-container .tab-title h1{
+    width: 325px;;
     float: right;
-    text-align: center;
-    position: relative;
-}
-.container .tab-container .e-tab h1{
-    text-align: center;
-    text-transform: uppercase;
+    height: 40px;
     line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
     position: relative;
-    -webkit-border-radius: 40px 40px 0 0;
-    -moz-border-radius: 40px 40px 0 0;
-    border-radius: 40px 40px 0 0;
-    z-index: 1;
-    width: 305px;
+    z-index: 5;
+    background: #FFF;
+    box-shadow: gray 0 0 2px inset;
+    border-radius: 0 20px 0 0;
+    -moz-border-radius: 0 20px 0 0;
+    -webkit-border-radius: 0 20px 0 0;
 }
-/* .container .tab-container .e-tab:first-child h1,
-.container .tab-container .e-tab:last-child h1{
-    width: 295px;
+.container .tab-container .tab-title h1:nth-child(2){
+    margin-left: -53px;
+/*     z-index: 4; */
 }
-.container .tab-container .e-tab:nth-child(2) h1,
-.container .tab-container .e-tab:nth-child(3) h1{
-    width: 305px;
-    margin-left: -10px;
+.container .tab-container .tab-title h1:nth-child(3){
+    margin-left: -53px;
+/*     z-index: 3; */
 }
-.container .tab-container .e-tab:last-child h1{
-    margin-left: -10px;
-    z-index: 10;
-} */
-.container .tab-container .e-tab:first-child h1,
-.container .tab-container .e-tab:nth-child(2) h1,
-.container .tab-container .e-tab:nth-child(3) h1{
-    margin-left: -20px;
+.container .tab-container .tab-title h1:nth-child(1){
+    margin-left: -54px;
+/*     z-index: 2; */
 }
-.container .tab-container .e-tab:first-child h1,
-.container .tab-container .e-tab:nth-child(3) h1{
-    background: red;
-}
-.container .tab-container .e-tab:last-child,
-.container .tab-container .e-tab:nth-child(2){
-/*     background: #FFF; */
-}
-.container .tab-container .e-tab:last-child h1,
-.container .tab-container .e-tab:nth-child(2) h1{
-/*     -webkit-border-radius: 0 0 40px 40px;
-    -moz-border-radius: 0 0 40px 40px;
-    border-radius: 0 0 40px 40px; */
+.container .tab-container .tab-content{
+    position: absolute;
+    float: right;
+    z-index: 5;
+    width: 100%;
+    top: 55px;
+    left: 0;
     background: gray;
 }
 
