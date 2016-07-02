@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <spring:url value="/resources/image/thumb" var="logo" />
-        <link rel="shortcut icon" href="${logo}/logo.jpg" type="image/jpg" />
+        <link rel="Shortcut Icon" href="${logo}/logo.jpg" type="image/x-icon" />
         <title>${currentPage}</title>
         <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
         <spring:url value="/resources/core/css/style.css" var="styleCss" />
@@ -24,6 +24,6 @@
         <header class="clearfix">
             <%@include file="../fragments/topheader.jsp" %>
             <%@include file="../fragments/middleheader.jsp" %>
-            <%@include file="../fragments/mainnav.jsp" %>
+            <%@include file="../fragments/navbar.jsp" %>
         </header>
 

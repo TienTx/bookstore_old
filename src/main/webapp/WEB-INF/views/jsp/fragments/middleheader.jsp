@@ -9,15 +9,15 @@
 <spring:url value="/resources/image/thumb" var="thumb" />
 <section class="inside clearfix">
     <section class="logo">
-        <a href="<%=request.getContextPath()%>/home.html">
-            <img alt="logo" src="${thumb}/logo.jpg">
+        <a href="${pageContext.request.contextPath}/home.html">
+            <img alt="logo" src="${thumb}/logo.png">
         </a>
     </section>
     <section class="user-option">
         <span>&Xi; </span>
         <section class="option">
-            <a href="<%=request.getContextPath()%>/login.html">Login</a><br>
-            <a href="<%=request.getContextPath()%>/register.html">Register</a>
+            <a href="${pageContext.request.contextPath}/login.html">Login&nbsp;&clubs;</a><br>
+            <a href="${pageContext.request.contextPath}/register.html">Register&nbsp;&clubs;</a>
         </section>
     </section>
 </section>

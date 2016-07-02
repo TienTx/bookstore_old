@@ -6,6 +6,7 @@
 package tientx.supercode.bookstore.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,9 +27,10 @@ public class HomeCtr {
     }
 
     @RequestMapping(value = "home.html", method = RequestMethod.GET)
-    public ModelAndView home(ModelAndView mav, HttpServletRequest request) {
+    public ModelAndView home(ModelAndView mav, HttpServletRequest request,
+            HttpSession session) {
         mav = new ModelAndView("home");
-        MyTool.setModelData(mav, "Home", request);
+        MyTool.setModelData(mav, "Home", request, session);
         return mav;
     }
 }

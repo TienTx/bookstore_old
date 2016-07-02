@@ -1,36 +1,29 @@
 <%-- 
     Document   : mainnav
-    Created on : Jun 29, 2016, 5:04:03 PM
+    Created on : Jul 1, 2016, 4:06:19 PM
     Author     : zOzDarKzOz
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<section class="clearfix">
-    <section class="inside clearfix">
-        <nav>
-            <h1>Danh muc <a>&Delta;</a></h1>
-
-            <ul>
-                <li><a href="">a</a></li>
-                <li><a href="">b</a></li>
-                <li><a href="">c</a></li>
-                <li><a href="">d</a></li>
-            </ul>
-        </nav>
-        <section class="searchFrm">
-            <form method="get" action="" name="searchFrm">
-                <select name="sop">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <input type="text" name="svl" placeholder="All book you need ...">
-                <input type="submit" value="" id="searchFrm">
-            </form>
-        </section>
-        <section class="cart">
-            cart
-        </section>
-    </section>
-</section>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<nav>
+    <h1>Danh mục <a>&Delta;</a></h1>
+    <c:if test="${!empty mapCategory}">
+        <ul class="category">
+            <c:forEach items="${mapCategory}" var="mapCategory">
+                <li>
+                    <h2>&nbsp; &raquo; ${mapCategory.key}</h2>
+                    <ul class="subCt">
+                        <c:forEach items="${mapCategory.value}" var="mapSubCategory">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/${mapSubCategory.value.sLink}.html">
+                                    ${mapSubCategory.value.sName}
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
+    </c:if>
+</nav>

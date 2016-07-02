@@ -90,20 +90,20 @@ button::-moz-focus-inner { margin:0; padding:0;}
 
 input, select {
     _zoom:1;
-    font-size:11px;
-    margin-bottom:4px;
+    font-size: 11px;
+    margin-bottom: 4px;
 }
 :focus {
     outline: 0;
 }
 h1, h2, h3, h4, h5, h6{
-    font-size:16px;
+    font-size: 16px;
 }
 p,span,div{
-    cursor:default;
+    cursor: default;
 }
 a *{
-    cursor:pointer;
+    cursor: pointer;
 }
 a:hover{
     text-decoration: none !important;
@@ -115,7 +115,9 @@ a:hover{
 .inside {
     margin: 0 auto;
     position: relative;
-    width: 1110px;
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .clearfix:before,.clearfix:after {
     content: "";
@@ -131,8 +133,6 @@ a:hover{
 .content{
     width: 760px;
     float: left;
-}
-aside{
 }
 .error{
     color: red;
@@ -261,6 +261,8 @@ header > .clearfix:first-child{
 }
 header > .clearfix:first-child .inside{
     line-height: 25px;
+/*     border-bottom: rgba(0,0,0,0.1) thin solid; */
+/*     box-sizing: border-box; */
 }
 header > .clearfix:first-child .inside a,
 header > .clearfix:first-child .inside span{
@@ -275,22 +277,34 @@ header > .clearfix:first-child .inside a img{
     height: 23px;
 }
 /****************** banner, user option style *******************/
+header > .inside{
+    background: url('../..//image/thumb/banner1.JPG') center center no-repeat;
+    background-size: 65%;
+}
 header > .inside .logo{
     float: left;
-    height: 130px;
-    line-height: 130px;
-    padding: 0 10px;
+    height: 125px;
+    line-height: 110px;
+    padding: 0 20px;
+    margin-top: -15px;
 }
 header > .inside .logo a{
-    margin-top: -2px;
+    display: block;
+    -moz-border-radius: 30%;
+    -webkit-border-radius: 30%;
+    border-radius: 30%;
 }
 header > .inside .logo a img{
-    height: 130px;
-    width: 170px;
+    height: 125px;
+    width: 155px;
+    -moz-border-radius: 30%;
+    -webkit-border-radius: 30%;
+    border-radius: 30%;
 }
 header > .inside .user-option{
     float: right;
-    height: 130px;
+    height: 110px;
+    /*width: auto;*/
     position: relative;
 }
 header > .inside .user-option span{
@@ -303,6 +317,7 @@ header > .inside .user-option span{
     line-height: 40px;
     background: url('../..//image/icon/user.png') center right no-repeat;
     background-size: 77%;
+    font-weight: bold;
 }
 header > .inside .user-option .option{
     position: absolute;
@@ -315,6 +330,8 @@ header > .inside .user-option .option a{
     float: right;
     display: block;
     height: 20px;
+    /*width: auto;*/
+    padding: 0 2px;
     line-height: 20px;
     margin: 2.5px 0;
 }
@@ -325,7 +342,9 @@ header > .clearfix:last-child{
 header > .clearfix:last-child nav{
     float: left;
     height: 45px;
-    width: 180px;
+    width: 200px;
+    z-index: 1000;
+    position: relative;
 }
 header > .clearfix:last-child nav h1{
     color: #FFF;
@@ -340,20 +359,93 @@ header > .clearfix:last-child nav h1{
 header > .clearfix:last-child nav h1 a{
     transform: rotate(180deg);
     position: absolute;
-    top: 3px;
+    top: 2px;
     right: 37px;
     color: #FFF;
     font-size: 14px;
     cursor: pointer;
 }
+header > .clearfix:last-child nav .category{
+/*     background: red; */
+    width: 200px;
+/*     margin-top: -2px; */
+    box-shadow: #087B39 2px -2px 2px inset;
+/*     height: 452px; */
+/*     overflow: auto; */
+    min-height: 450px;
+    -moz-border-radius: 0 0 7px 5px;
+    -webkit-border-radius: 0 0 7px 5px;
+    border-radius: 0 0 7px 5px;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: #FFF;
+    padding-bottom: 25px;
+}
+header > .clearfix:last-child nav .category > li{
+    width: 100%;
+}
+header > .clearfix:last-child nav .category > li h2{
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+/*     text-transform: uppercase; */
+    color: #087B39;
+    text-shadow: #000000 0px 1px 0px;
+    width: 180px;
+    margin-left: 20px;
+    text-align: left;
+    margin-top: 5px;
+    box-shadow: #27990C 1px -2px 1px inset;
+    -moz-border-radius: 7px 0 3px 7px;
+    -webkit-border-radius: 7px 0 3px 7px;
+    border-radius: 7px 0 3px 7px;
+    cursor: pointer;
+    
+}
+header > .clearfix:last-child nav .category > li .subCt{
+    width: 200px;
+    padding-left: 25px;
+/*     margin-bottom: 7px; */
+    max-height: 0px;
+    transition: max-height 2s;
+/*     transition: min-height 1s; */
+    overflow: hidden;
+}
+header > .clearfix:last-child nav .category > li .subCt li{
+    width: 100%;
+    border-bottom: #27990C thin dashed;
+}
+header > .clearfix:last-child nav .category > li .subCt li a{
+    display: block;
+    color: #087B39;
+    line-height: 35px;
+    font-weight: bold;
+/*     text-align: right; */
+}
+header > .clearfix:last-child nav .category > li .subCt li a:hover{
+    color: #27990C;
+    font-style: italic;
+}
+header > .clearfix:last-child nav .category > li:hover h2{
+    box-shadow: #27990C -1px 2px 1px inset;
+    -moz-border-radius: 0 7px 0 0;
+    -webkit-border-radius: 0 7px 0 0;
+    border-radius: 0 7px 0 0;
+}
+header > .clearfix:last-child nav .category > li:hover .subCt{
+    max-height: 450px;
+    min-height: 5px;
+}
 header > .clearfix:last-child .searchFrm{
     float: left;
-    width: 780px;
+    width: 750px;
     margin: 0 5px;
     text-align: center;
+    position: relative;
 }
 header > .clearfix:last-child .searchFrm form{
-    width: 600px;
+    width: 610px;
     line-height: 45px;
     height: 45px;
     position: relative;
@@ -368,6 +460,8 @@ header > .clearfix:last-child .searchFrm form input[type="text"]{
     font-size: 14px;
     min-width: 420px;
     border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
 }
 header > .clearfix:last-child .searchFrm form input[type="submit"]{
     position: absolute;
@@ -380,18 +474,120 @@ header > .clearfix:last-child .searchFrm form select{
     font-size: 14px;
     height: 30px;
     padding: 0 5px;
-    min-width: 170px;
+    min-width: 180px;
     text-align: center;
     border: none;
     outline: none;
     border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+}
+header > .clearfix:last-child .searchFrm form select option:disabled{
+    font-weight: bold;
 }
 header > .clearfix:last-child .cart{
-    float: right;
-    width: 140px;
+    float: left;
+    width: 165px;
     height: 45px;
     line-height: 45px;
+    position: relative;
 }
+/****************** home style *******************/
+.container aside.as-left{
+    width: 200px;
+    float: left;
+    min-height: 450px;
+    position: relative;
+    z-index: 1;
+}
+.container .main-slide{
+    float: left;
+    width: 940px;
+    min-height: 450px;
+    box-shadow: green -2px -2px 2px inset;
+}
+.container .tab-container{
+    width: 100%;
+    clear: both;
+    min-height: 500px;
+}
+.container .tab-container .e-tab{
+    width: 25%;
+    float: right;
+    text-align: center;
+    position: relative;
+}
+.container .tab-container .e-tab h1{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 40px;
+    position: relative;
+    -webkit-border-radius: 40px 40px 0 0;
+    -moz-border-radius: 40px 40px 0 0;
+    border-radius: 40px 40px 0 0;
+    z-index: 1;
+    width: 305px;
+}
+/* .container .tab-container .e-tab:first-child h1,
+.container .tab-container .e-tab:last-child h1{
+    width: 295px;
+}
+.container .tab-container .e-tab:nth-child(2) h1,
+.container .tab-container .e-tab:nth-child(3) h1{
+    width: 305px;
+    margin-left: -10px;
+}
+.container .tab-container .e-tab:last-child h1{
+    margin-left: -10px;
+    z-index: 10;
+} */
+.container .tab-container .e-tab:first-child h1,
+.container .tab-container .e-tab:nth-child(2) h1,
+.container .tab-container .e-tab:nth-child(3) h1{
+    margin-left: -20px;
+}
+.container .tab-container .e-tab:first-child h1,
+.container .tab-container .e-tab:nth-child(3) h1{
+    background: red;
+}
+.container .tab-container .e-tab:last-child,
+.container .tab-container .e-tab:nth-child(2){
+/*     background: #FFF; */
+}
+.container .tab-container .e-tab:last-child h1,
+.container .tab-container .e-tab:nth-child(2) h1{
+/*     -webkit-border-radius: 0 0 40px 40px;
+    -moz-border-radius: 0 0 40px 40px;
+    border-radius: 0 0 40px 40px; */
+    background: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

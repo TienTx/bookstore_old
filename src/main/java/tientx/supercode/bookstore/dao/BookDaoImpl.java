@@ -8,9 +8,9 @@ package tientx.supercode.bookstore.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import tientx.supercode.bookstore.database.DBTool;
 import tientx.supercode.bookstore.database.SingleDBConnection;
 import tientx.supercode.bookstore.model.Book;
 import tientx.supercode.bookstore.model.Deals;
@@ -55,7 +55,8 @@ public class BookDaoImpl implements BookDao {
                 + "ON tblBook.idSubCt = tblSubCategory.idSubCt "
                 + "WHERE tblBook.idBook = " + id;
         try {
-            rs = DBTool.getData(conn, sqlSelect);
+            Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = state.executeQuery(sqlSelect);
             if (rs != null && rs.next()) {
                 SubCategory subCategory = new SubCategory(
                         rs.getInt(13), rs.getString(14),
@@ -111,7 +112,8 @@ public class BookDaoImpl implements BookDao {
                 + "WHERE "
                 + "tblDeals.idDeals = " + id + ";";
         try {
-            rs = DBTool.getData(conn, sqlSelect);
+            Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = state.executeQuery(sqlSelect);
             if (rs != null) {
                 List<Deals> list = new ArrayList<>();
                 while (rs.next()) {
@@ -170,14 +172,16 @@ public class BookDaoImpl implements BookDao {
 
             int numm = ps.executeUpdate();
             if (numm == 1) {
-                rs = DBTool.getData(conn, "SELECT LAST_INSERT_ID();");
+                Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                rs = state.executeQuery("SELECT LAST_INSERT_ID();");
                 if (rs != null && rs.next()) {
                     Integer idBook = rs.getInt(1);
                     String sqlUpdate = "UPDATE tblBook "
                             + "SET tblBook.link = ? "
                             + "WHERE tblBook.idBook = ?;";
                     ps = conn.prepareStatement(sqlUpdate);
-                    ps.setString(1, MyTool.handleLink(book.getsTitle(), idBook));
+                    ps.setString(1, MyTool.handleLink(book.getsTitle()));
+//                    ps.setString(1, MyTool.handleLink(book.getsTitle(), idBook));
                     ps.setInt(2, idBook);
 
                     numm = ps.executeUpdate();
@@ -233,7 +237,8 @@ public class BookDaoImpl implements BookDao {
             ps.setInt(10, 0);
             ps.setInt(11, 0);
             ps.setInt(11, 0);
-            ps.setString(12, MyTool.handleLink(book.getsTitle(), book.getIdBook()));
+            ps.setString(12, MyTool.handleLink(book.getsTitle()));
+//            ps.setString(12, MyTool.handleLink(book.getsTitle(), book.getIdBook()));
 
             int numm = ps.executeUpdate();
             return (numm == 1);
