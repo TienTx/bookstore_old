@@ -60,6 +60,9 @@ body {
     color: #000;
     position: relative;
 }
+body > *{
+    width: 100%;
+}
 ol, ul {
     list-style: none;
 }
@@ -261,8 +264,8 @@ header > .clearfix:first-child{
 }
 header > .clearfix:first-child .inside{
     line-height: 25px;
-/*     border-bottom: rgba(0,0,0,0.1) thin solid; */
-/*     box-sizing: border-box; */
+    /*     border-bottom: rgba(0,0,0,0.1) thin solid; */
+    /*     box-sizing: border-box; */
 }
 header > .clearfix:first-child .inside a,
 header > .clearfix:first-child .inside span{
@@ -325,28 +328,42 @@ header > .inside .user-option .option{
     height: 45px;
     top: 50%;
     margin-top: -22.5px;
+    min-width: 150px;
 }
 header > .inside .user-option .option a{
     float: right;
     display: block;
     height: 20px;
-    /*width: auto;*/
+    width: 100%;
     padding: 0 2px;
     line-height: 20px;
     margin: 2.5px 0;
+    text-align: right;
 }
 /****************** navigation, search, cart style *******************/
 header > .clearfix:last-child{
     background: #087B39;
+    height: 45px;
 }
-header > .clearfix:last-child nav{
+.fnb{
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    z-index: 1111;
+    width: 100%;
+    background: #087B39;
+    height: 45px;
+    transition: all 0.2s ease-in-out;
+    /*display: none;*/
+}
+#navbar nav{
     float: left;
     height: 45px;
     width: 200px;
     z-index: 1000;
     position: relative;
 }
-header > .clearfix:last-child nav h1{
+#navbar nav h1{
     color: #FFF;
     font-size: 18px;
     text-transform: uppercase;
@@ -355,11 +372,12 @@ header > .clearfix:last-child nav h1{
     font-weight: bold;
     position: relative;
     cursor: pointer;
+    text-shadow: #000000 0px 1px 0px;
 }
-header > .clearfix:last-child nav h1 a{
+#navbar nav h1 a{
     transform: rotate(180deg);
     position: absolute;
-    top: 15px;
+    top: 16px;
     right: 37px;
     color: #087B39;
     font-size: 13px;
@@ -372,16 +390,15 @@ header > .clearfix:last-child nav h1 a{
     -moz-border-radius: 40%;
     -webkit-border-radius: 40%;
     border-radius: 40%;
-    box-shadow: #087B39 -1px -1px 1px inset;
-    
+    box-shadow: #087B39 0 0 1px inset;
+    -webkit-transition: all 0.5s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+    -moz-transition: all 0.5s ease-out;  /* Firefox 4-15 */
+    -o-transition: all 0.5s ease-out;  /* Opera 10.50–12.00 */
+    transition: all 0.5s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.50+ */
 }
-header > .clearfix:last-child nav .category{
-/*     background: red; */
+#navbar nav .category{
     width: 200px;
-/*     margin-top: -2px; */
     box-shadow: #087B39 2px -2px 2px inset;
-/*     height: 452px; */
-/*     overflow: auto; */
     min-height: 450px;
     -moz-border-radius: 0 0 7px 5px;
     -webkit-border-radius: 0 0 7px 5px;
@@ -391,15 +408,15 @@ header > .clearfix:last-child nav .category{
     left: 0;
     background: #FFF;
     padding-bottom: 25px;
+    z-index: 1000;
 }
-header > .clearfix:last-child nav .category > li{
+#navbar nav .category > li{
     width: 100%;
 }
-header > .clearfix:last-child nav .category > li h2{
+#navbar nav .category > li h2{
     display: block;
     font-size: 14px;
     line-height: 30px;
-/*     text-transform: uppercase; */
     color: #087B39;
     text-shadow: #000000 0px 1px 0px;
     width: 180px;
@@ -411,57 +428,56 @@ header > .clearfix:last-child nav .category > li h2{
     -webkit-border-radius: 7px 0 3px 7px;
     border-radius: 7px 0 3px 7px;
     cursor: pointer;
-    
+
 }
-header > .clearfix:last-child nav .category > li .subCt{
+#navbar nav .category > li .subCt{
     width: 200px;
     padding-left: 25px;
-/*     margin-bottom: 7px; */
     max-height: 0px;
     transition: max-height 2s;
-/*     transition: min-height 1s; */
+    /*     transition: min-height 1s; */
     overflow: hidden;
 }
-header > .clearfix:last-child nav .category > li .subCt li{
+#navbar nav .category > li .subCt li{
     width: 100%;
     border-bottom: #27990C thin dashed;
 }
-header > .clearfix:last-child nav .category > li .subCt li a{
+#navbar nav .category > li .subCt li a{
     display: block;
     color: #087B39;
     line-height: 35px;
     font-weight: bold;
-/*     text-align: right; */
+    /*     text-align: right; */
 }
-header > .clearfix:last-child nav .category > li .subCt li a:hover{
+#navbar nav .category > li .subCt li a:hover{
     color: #27990C;
     font-style: italic;
 }
-header > .clearfix:last-child nav .category > li:hover h2{
+#navbar nav .category > li:hover h2{
     box-shadow: #27990C -1px 2px 1px inset;
     -moz-border-radius: 0 7px 0 0;
     -webkit-border-radius: 0 7px 0 0;
     border-radius: 0 7px 0 0;
 }
-header > .clearfix:last-child nav .category > li:hover .subCt{
+#navbar nav .category > li:hover .subCt{
     max-height: 450px;
     min-height: 5px;
 }
-header > .clearfix:last-child .searchFrm{
+#navbar .searchFrm{
     float: left;
     width: 750px;
     margin: 0 5px;
     text-align: center;
     position: relative;
 }
-header > .clearfix:last-child .searchFrm form{
+#navbar .searchFrm form{
     width: 610px;
     line-height: 45px;
     height: 45px;
     position: relative;
     margin: auto;
 }
-header > .clearfix:last-child .searchFrm form input[type="text"]{
+#navbar .searchFrm form input[type="text"]{
     height: 30px;
     line-height: 30px;
     border: none;
@@ -473,14 +489,14 @@ header > .clearfix:last-child .searchFrm form input[type="text"]{
     -moz-border-radius: 0 5px 5px 0;
     -webkit-border-radius: 0 5px 5px 0;
 }
-header > .clearfix:last-child .searchFrm form input[type="submit"]{
+#navbar .searchFrm form input[type="submit"]{
     position: absolute;
     width: 37px;
     right: 0;
     border: none;
     background: url(../..//image/icon/search.png) center center no-repeat;
 }
-header > .clearfix:last-child .searchFrm form select{
+#navbar .searchFrm form select{
     font-size: 14px;
     height: 30px;
     padding: 0 5px;
@@ -492,10 +508,10 @@ header > .clearfix:last-child .searchFrm form select{
     -moz-border-radius: 5px 0 0 5px;
     -webkit-border-radius: 5px 0 0 5px;
 }
-header > .clearfix:last-child .searchFrm form select option:disabled{
+#navbar .searchFrm form select option:disabled{
     font-weight: bold;
 }
-header > .clearfix:last-child .cart{
+#navbar .cart{
     float: left;
     width: 165px;
     height: 45px;
@@ -519,7 +535,7 @@ header > .clearfix:last-child .cart{
 .container .tab-container{
     width: 100%;
     clear: both;
-    min-height: 500px;
+    min-height: 800px;
     padding-top: 15px;
     position: relative;
 }
@@ -544,15 +560,15 @@ header > .clearfix:last-child .cart{
 }
 .container .tab-container .tab-title h1:nth-child(2){
     margin-left: -53px;
-/*     z-index: 4; */
+    /*     z-index: 4; */
 }
 .container .tab-container .tab-title h1:nth-child(3){
     margin-left: -53px;
-/*     z-index: 3; */
+    /*     z-index: 3; */
 }
 .container .tab-container .tab-title h1:nth-child(1){
     margin-left: -54px;
-/*     z-index: 2; */
+    /*     z-index: 2; */
 }
 .container .tab-container .tab-content{
     position: absolute;
@@ -570,6 +586,87 @@ header > .clearfix:last-child .cart{
 
 
 
+/****************** footer style *******************/
+footer{
+    min-height: 50px;
+    box-shadow: #959595 0 -50px 0 inset;
+    background: #EEEEEE;
+}
+footer .inside:first-child{
+    min-height: 250px;
+    padding-top: 25px;
+    /*     border-top: #E1E1E1 thin dashed;
+        box-sizing: border-box; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: #959595 0px 3px 0px inset;
+}
+footer .inside:first-child .bottom-cl{
+    min-height: 260px;
+    padding: 5px 0 0 30px;
+    text-align: center;
+    margin: 0 0 20px 0;
+    background: #FFF;
+}
+footer .inside:first-child .bottom-cl:first-child{
+    width: 150px;
+    text-align: center;
+    padding-left: 0;
+/*    align-items: center;
+    justify-content: center;
+    display: inline-table;*/
+    /*background: none;*/
+}
+footer .inside:first-child .bottom-cl:last-child{
+    padding-right: 30px;
+    border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+}
+footer .inside:first-child .bottom-cl:first-child h1,
+footer .inside:first-child .bottom-cl:first-child a{
+    text-align: center;
+}
+footer .inside:first-child .bottom-cl:first-child h1{
+    line-height: 25px;
+    box-shadow: #EEEEEE 0 -1px 0 inset;
+}
+footer .inside:first-child .bottom-cl:nth-child(2){
+    width: 70px;
+    margin: 0 0 20px 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: url('../..//image/background/flu.png') right center no-repeat;
+    background-size: 15%;
+    box-shadow: #FFF 62px 0px 0px inset;
+    border-radius: 0 50% 50% 0;
+    -moz-border-radius: 0 50% 50% 0;
+    -webkit-border-radius: 0 50% 50% 0;
+    padding: 5px 0 0 0;
+}
+footer .inside:first-child .bottom-cl:nth-child(2) h2{
+    line-height: 45px;
+    font-size: 14px;
+    color: gray;
+}
+footer .inside:last-child{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+footer .inside:last-child a,
+footer .inside:last-child h2{
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 14px;
+}
+footer .inside:last-child a img{
+    width: 50px;
+}
 
 
 

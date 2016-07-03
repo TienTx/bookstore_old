@@ -6,8 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <nav>
-    <h1>Danh mục <a>&Delta;</a></h1>
+    <h1 id="sn"><spring:message code="nav.category"/> <a>&Delta;</a></h1>
     <c:if test="${!empty mapCategory}">
         <ul class="category">
             <c:forEach items="${mapCategory}" var="mapCategory">

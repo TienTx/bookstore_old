@@ -16,8 +16,8 @@
     <section class="user-option">
         <span>&Xi; </span>
         <section class="option">
-            <a href="${pageContext.request.contextPath}/login.html">Login&nbsp;&clubs;</a><br>
-            <a href="${pageContext.request.contextPath}/register.html">Register&nbsp;&clubs;</a>
+            <a href="${pageContext.request.contextPath}/login.html"><spring:message code="user.login"/>&nbsp;&clubs;</a><br>
+            <a href="${pageContext.request.contextPath}/register.html"><spring:message code="user.register"/>&nbsp;&clubs;</a>
         </section>
     </section>
 </section>
