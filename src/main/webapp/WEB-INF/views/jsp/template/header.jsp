@@ -10,8 +10,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <spring:url value="/resources/image/thumb" var="logo" />
-        <link rel="Shortcut Icon" href="${logo}/logo.jpg" type="image/x-icon" />
+        <spring:url value="/resources/image/thumb" var="thumb" />
+        <spring:url value="/resources/image/icon" var="icon" />
+        <link rel="Shortcut Icon" href="${thumb}/logo.jpg" type="image/x-icon" />
         <title>${currentPage}</title>
         <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
         <spring:url value="/resources/core/css/style.css" var="styleCss" />

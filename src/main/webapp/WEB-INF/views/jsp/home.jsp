@@ -16,21 +16,21 @@
     </section>
     <section class="tab-container">
         <section class="tab-title">
-            <h1>sach nhap</h1>
-            <h1>sach trong thang</h1>
-            <h1>sach trong tuan</h1>
-            <h1>sach moi</h1>
+            <h1 id="b-s">sach nhap</h1>
+            <h1 id="b-i-m">sach trong thang</h1>
+            <h1 id="b-i-w">sach trong tuan</h1>
+            <h1 class="show-tab-title" id="b-n">sach moi</h1>
         </section>
-        <section class="tab-content" style="background: green;">
+        <section class="tab-content b-s">
             sach nhap
         </section>
-        <section class="tab-content" style="background: greenyellow;">
+        <section class="tab-content b-i-m">
             sach trong thang
         </section>
-        <section class="tab-content" style="background: aquamarine;">
+        <section class="tab-content b-i-w">
             sach trong tuan
         </section>
-        <section class="tab-content" style="background: burlywood;">
+        <section class="tab-content b-n show-tab-content">
             sach moi
         </section>
     </section>

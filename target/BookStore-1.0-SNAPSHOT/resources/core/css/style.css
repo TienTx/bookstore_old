@@ -143,7 +143,17 @@ a:hover{
 .hide{
     display: none;
 }
-
+.show-tab-title{
+    border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -webkit-border-radius: 20px 20px 0 0;
+    background: #EEEEEE;
+}
+.show-tab-content{
+    z-index: 10 !important;
+    background: #EEEEEE;
+    display: block !important;
+}
 /* Smartphones (portrait and landscape) ----------- */
 @media all and (min-device-width : 320px){
     .content{
@@ -264,8 +274,6 @@ header > .clearfix:first-child{
 }
 header > .clearfix:first-child .inside{
     line-height: 25px;
-    /*     border-bottom: rgba(0,0,0,0.1) thin solid; */
-    /*     box-sizing: border-box; */
 }
 header > .clearfix:first-child .inside a,
 header > .clearfix:first-child .inside span{
@@ -307,7 +315,6 @@ header > .inside .logo a img{
 header > .inside .user-option{
     float: right;
     height: 110px;
-    /*width: auto;*/
     position: relative;
 }
 header > .inside .user-option span{
@@ -354,7 +361,6 @@ header > .clearfix:last-child{
     background: #087B39;
     height: 45px;
     transition: all 0.2s ease-in-out;
-    /*display: none;*/
 }
 #navbar nav{
     float: left;
@@ -447,7 +453,6 @@ header > .clearfix:last-child{
     color: #087B39;
     line-height: 35px;
     font-weight: bold;
-    /*     text-align: right; */
 }
 #navbar nav .category > li .subCt li a:hover{
     color: #27990C;
@@ -518,6 +523,49 @@ header > .clearfix:last-child{
     line-height: 45px;
     position: relative;
 }
+#navbar .cart span,
+#navbar .cart img{
+    float: right;
+    color: cyan;
+}
+#navbar .cart span small{
+    font-size: 11px;
+}
+#navbar .cart span.crt{
+    color: bisque;
+}
+#navbar .cart span#ttpr{
+    padding: 0 1px;
+}
+#navbar .cart img{
+    height: 20px;
+    width: 25px;
+    margin: 10px 3px;
+    -webkit-animation: cssAnimationRoleCart 2s infinite ease;
+    -moz-animation: cssAnimationRoleCart 2s infinite ease;
+    -o-animation: cssAnimationRoleCart 2s infinite ease;
+}
+@-webkit-keyframes cssAnimationRoleCart {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(-20deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(20deg);}
+    100%{transform: rotate(0deg);}
+}
+@-moz-keyframes cssAnimationRoleCart {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(-20deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(20deg);}
+    100%{transform: rotate(0deg);}
+}
+@-o-keyframes cssAnimationRoleCart {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(-20deg);}
+    50%{transform: rotate(0deg);}
+    75%{transform: rotate(20deg);}
+    100%{transform: rotate(0deg);}
+}
 /****************** home style *******************/
 .container aside.as-left{
     width: 200px;
@@ -535,7 +583,6 @@ header > .clearfix:last-child{
 .container .tab-container{
     width: 100%;
     clear: both;
-    min-height: 800px;
     padding-top: 15px;
     position: relative;
 }
@@ -544,7 +591,7 @@ header > .clearfix:last-child{
     clear: both;
 }
 .container .tab-container .tab-title h1{
-    width: 325px;;
+    width: 285px;
     float: right;
     height: 40px;
     line-height: 40px;
@@ -552,32 +599,19 @@ header > .clearfix:last-child{
     text-align: center;
     position: relative;
     z-index: 5;
-    background: #FFF;
-    box-shadow: gray 0 0 2px inset;
-    border-radius: 0 20px 0 0;
-    -moz-border-radius: 0 20px 0 0;
-    -webkit-border-radius: 0 20px 0 0;
-}
-.container .tab-container .tab-title h1:nth-child(2){
-    margin-left: -53px;
-    /*     z-index: 4; */
-}
-.container .tab-container .tab-title h1:nth-child(3){
-    margin-left: -53px;
-    /*     z-index: 3; */
-}
-.container .tab-container .tab-title h1:nth-child(1){
-    margin-left: -54px;
-    /*     z-index: 2; */
+    border-left: gray thin solid;
+    border-right: gray thin solid;
+    box-sizing: border-box;
+    box-shadow: gray 0 2px 0 inset; 
 }
 .container .tab-container .tab-content{
-    position: absolute;
+    position: relative;
     float: right;
     z-index: 5;
     width: 100%;
-    top: 55px;
-    left: 0;
-    background: gray;
+    min-height: 800px;
+    box-shadow: gray 0 -2px 2px inset;
+    display: none;
 }
 
 
@@ -614,9 +648,9 @@ footer .inside:first-child .bottom-cl:first-child{
     width: 150px;
     text-align: center;
     padding-left: 0;
-/*    align-items: center;
-    justify-content: center;
-    display: inline-table;*/
+    /*    align-items: center;
+        justify-content: center;
+        display: inline-table;*/
     /*background: none;*/
 }
 footer .inside:first-child .bottom-cl:last-child{

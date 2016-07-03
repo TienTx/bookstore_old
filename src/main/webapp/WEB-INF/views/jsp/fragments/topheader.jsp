@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<spring:url value="/resources/image/icon" var="icon" />
 
 <section class="clearfix">
     <section class="inside clearfix">

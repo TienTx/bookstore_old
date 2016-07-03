@@ -33,7 +33,7 @@ function fBackToTopAndFixedNavbar() {
         });
     }
 }
-
+//rotate navigation icon
 function rotateX(x) {
     $('#sn a').css({
         "- webkit - transform": "rotate(" + x + "deg)", /* Chrome, Safari 3.1+ */
@@ -43,7 +43,7 @@ function rotateX(x) {
         "transform": "rotate(" + x + "deg)" /* Firefox 16+, IE 10+, Opera 12.50+ */
     });
 }
-
+//togle category
 function togleCategory(x) {
     $('#sn').click(function () {
         x += 360;
@@ -59,9 +59,50 @@ function togleCategory(x) {
         $(this).parent().find('.subCt').show(500);
     });
 }
+//show book tab
+function showBookTab() {
+    $('.tab-title h1').click(function () {
+        $('.tab-title h1').removeClass('show-tab-title');
+        $(this).addClass('show-tab-title');
+        var className = "." + $(this).attr('id');
+        var target = $(this).parent().parent().find(className);
+        $('.tab-content').removeClass('show-tab-content');
+        $(target).addClass('show-tab-content');
+    });
+}
+//function sub slide
+function subSlide() {
+    $('.sub-slide').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+}
 
 $(document).ready(function () {
 
     fBackToTopAndFixedNavbar();
     togleCategory(180);
+    showBookTab();
+    subSlide();
 });
